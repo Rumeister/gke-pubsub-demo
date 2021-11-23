@@ -1,0 +1,6 @@
+# for ((k=200; k>=1; k--))
+# do
+#     gcloud pubsub topics publish echo --message="Hello, world $k!"
+# done
+
+for i in {200..1}; do gcloud pubsub topics publish echo --message="Autoscaling #${i}"; done

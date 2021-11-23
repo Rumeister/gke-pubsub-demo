@@ -1,0 +1,4 @@
+for ((k=1; k<=$1; k++))
+do
+    gcloud pubsub topics publish echo --message="Hello, world $k!"
+done
