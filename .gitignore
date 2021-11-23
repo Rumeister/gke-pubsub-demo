@@ -1,7 +1,0 @@
-.gitignore
-cloudbuild.yaml
-get-pip.py
-main.py
-requirements.txt
-deployment/pubsub-with-secret.yaml
-deployment/pubsuborig.yaml
