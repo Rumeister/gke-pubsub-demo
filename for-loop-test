@@ -1,4 +1,0 @@
-for k in {1..20}
-do
-  echo 'Hello' $k
-done

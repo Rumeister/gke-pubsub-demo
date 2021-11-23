@@ -1,3 +1,4 @@
+.dockerignore
 cloudbuild.yaml
 get-pip.py
 main.py

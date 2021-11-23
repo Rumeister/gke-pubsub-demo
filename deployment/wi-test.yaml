@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: workload-identity-test
-  namespace: k8s-svc-namespace
+  namespace: default
 spec:
   containers:
   - image: google/cloud-sdk:slim
     name: workload-identity-test
     command: ["sleep","infinity"]
-  serviceAccountName: k8s-svc-test
+  serviceAccountName: gke-service-pubsub
