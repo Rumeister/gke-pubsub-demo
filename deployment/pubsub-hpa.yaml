@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: pubsub
-  namespace: default
+  namespace: k8s-svc-namespace
 spec:
   minReplicas: 1
   maxReplicas: 5

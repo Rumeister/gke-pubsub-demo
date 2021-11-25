@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pubsub
-  namespace: default
+  namespace: k8s-svc-namespace
 spec:
   replicas: 3
   selector:
@@ -16,4 +16,4 @@ spec:
       containers:
       - name: subscriber
         image: northamerica-northeast1-docker.pkg.dev/ruhan-gke-sandbox/gke-pubsub-demo-repo/gke-pubsub-demo:latest
-      serviceAccountName: gke-service-pubsub
+      serviceAccountName: k8s-svc-test
