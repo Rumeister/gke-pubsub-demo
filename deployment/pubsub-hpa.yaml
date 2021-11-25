@@ -15,7 +15,7 @@ spec:
            resource.labels.subscription_id: echo-read
       target:
         type: AverageValue
-        averageValue: 0.2
+        averageValue: 200m
     type: External
   scaleTargetRef:
     apiVersion: apps/v1
