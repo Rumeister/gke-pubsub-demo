@@ -1,7 +1,7 @@
 from concurrent.futures import TimeoutError
 from google.cloud import pubsub_v1
 
-project_id = "ruhan-gke-sandbox"
+project_id = "thunderstorm-sada-sow"
 subscription_id = "echo-read"
 # Number of seconds the subscriber should listen for messages
 timeout = 86400.0
