@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pubsub
+  namespace: k8s-svc-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pubsub
+  template:
+    metadata:
+      labels:
+        app: pubsub
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: cloud.google.com/gke-nodepool
+                operator: In 
+                values:
+                  - spot-pool
+      containers:
+      - name: subscriber
+        image: northamerica-northeast1-docker.pkg.dev/thunderstorm-sada-sow/gke-pubsub-demo-repo/gke-pubsub-demo:v1
+      serviceAccountName: k8s-svc-test
