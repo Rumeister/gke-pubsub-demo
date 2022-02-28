@@ -2,6 +2,7 @@
 The ultimate goal of this application is to minimize cost whilst simultaneously maximizing throughput and uptime. 
 
 <img src="gke-pubsub-arch.png" width="100%">
+
 _Figure 3 - GKE application leveraging autoscaling functionality to consume Pub/Sub messages with a Python backend_
 
 The biggest risk with preemptible instances (soon to be Spot instances) would be impaired service due to delays in new resources being spun up to meet demand due to resource constraints within the region/zone or shutdown events.
