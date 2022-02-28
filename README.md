@@ -2,12 +2,12 @@
 The ultimate goal of this application is to minimize cost whilst simultaneously maximizing throughput and uptime. 
 
 <img src="gke-pubsub-arch.png" width="100%">
+
 _Figure 3 - GKE application leveraging autoscaling functionality to consume Pub/Sub messages with a Python backend_
 
 The biggest risk with preemptible instances (soon to be Spot instances) would be impaired service due to delays in new resources being spun up to meet demand due to resource constraints within the region/zone or shutdown events.
 
 #### Below are the steps to build this application from scratch.
--
 
 1. Set the following environment variables for ease of use in all downstream steps:
 
@@ -118,7 +118,7 @@ The biggest risk with preemptible instances (soon to be Spot instances) would be
 	> 
 	> ```sh
 	> kubectl exec -it workload-identity-test \
-	--namespace default -- /bin/bash
+	> --namespace default -- /bin/bash
 	> ```
 	> 
 	> You should now be connected to an interactive shell within the Pod. Run the below command:
@@ -147,17 +147,17 @@ The biggest risk with preemptible instances (soon to be Spot instances) would be
 
 		```sh
 		gcloud iam service-accounts add-iam-policy-binding --role \
-  roles/iam.workloadIdentityUser --member \
-  "serviceAccount:$PROJECT_ID.svc.id.goog[custom-metrics/custom-metrics-stackdriver-adapter]" \
-  gke-service-pubsub@$PROJECT_ID.iam.gserviceaccount.com
+        roles/iam.workloadIdentityUser --member \
+        "serviceAccount:$PROJECT_ID.svc.id.goog[custom-metrics/custom-metrics-stackdriver-adapter]" \
+        gke-service-pubsub@$PROJECT_ID.iam.gserviceaccount.com
 		```
 		
 	4. Finally, we can annotate the service account:
 
 		```sh
 		kubectl annotate serviceaccount --namespace custom-metrics \
-  custom-metrics-stackdriver-adapter \
-  iam.gke.io/gcp-service-account=gke-service-pubsub@$PROJECT_ID.iam.gserviceaccount.com
+        custom-metrics-stackdriver-adapter \
+        iam.gke.io/gcp-service-account=gke-service-pubsub@$PROJECT_ID.iam.gserviceaccount.com
 		```
 		
 12. Create a new artifact repository where your custom docker image(s) will be pushed:
