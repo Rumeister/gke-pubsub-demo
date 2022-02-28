@@ -8,11 +8,6 @@ _Figure 3 - GKE application leveraging autoscaling functionality to consume Pub/
 The biggest risk with preemptible instances (soon to be Spot instances) would be impaired service due to delays in new resources being spun up to meet demand due to resource constraints within the region/zone or shutdown events.
 
 #### Below are the steps to build this application from scratch.
-<<<<<<< HEAD
-=======
-
--
->>>>>>> 7e3fd381ff18b9b53febc6505ce0a7ca14205ea4
 
 1. Set the following environment variables for ease of use in all downstream steps:
 
