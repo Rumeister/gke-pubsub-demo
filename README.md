@@ -228,8 +228,8 @@ The biggest risk with preemptible instances (soon to be Spot instances) would be
 	Example output:
 	
 	```sh
-	NAME     REFERENCE           TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
-pubsub   Deployment/pubsub   0/200m (avg)   1         5         1          9d
+		NAME     REFERENCE           TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+	pubsub   Deployment/pubsub   0/200m (avg)   1         5         1          9d
 	```
 	
 	**_Terminal 2_**
@@ -238,8 +238,8 @@ pubsub   Deployment/pubsub   0/200m (avg)   1         5         1          9d
 	Example output:
 	
 	```sh
-	NAME                     READY   STATUS    RESTARTS   AGE   IP          NODE                                      NOMINATED NODE   READINESS GATES
-pubsub-d99cfddff-k26kq   1/1     Running   0          29m   10.0.8.24   gke-pubsub-test-spot-pool-3f1f7801-ldhs   <none>           <none>
+		NAME                     READY   STATUS    RESTARTS   AGE   IP          NODE                                      NOMINATED NODE   READINESS GATES
+	pubsub-d99cfddff-k26kq   1/1     Running   0          29m   10.0.8.24   gke-pubsub-test-spot-pool-3f1f7801-ldhs   <none>           <none>
 	```
 	
 	> You will notice that as pods begin to scale, node selection will vary between the spot pool and the on-demand pool. This is not the desired behavior as we would prefer scaling to occur with a preference for the spot pool and only leverage the on-demand pool when spot resources aren't available. 
@@ -263,8 +263,8 @@ pubsub-d99cfddff-k26kq   1/1     Running   0          29m   10.0.8.24   gke-pubs
 	> kubectl get nodes
 	> 
 	> NAME                                         STATUS   ROLES    AGE    VERSION
-gke-pubsub-test-default-pool-c2c1e90a-cp2s   Ready    <none>   2d1h   v1.20.10-gke.1600
-gke-pubsub-test-spot-pool-3f1f7801-ldhs      Ready    <none>   28h    v1.20.10-gke.1600
+	> gke-pubsub-test-default-pool-c2c1e90a-cp2s   Ready    <none>   2d1h   v1.20.10-gke.1600
+	> gke-pubsub-test-spot-pool-3f1f7801-ldhs      Ready    <none>   28h    v1.20.10-gke.1600
 	> 
 	> kubectl describe node gke-pubsub-test-spot-pool-3f1f7801-ldhs
 	> ```
@@ -272,13 +272,13 @@ gke-pubsub-test-spot-pool-3f1f7801-ldhs      Ready    <none>   28h    v1.20.10-g
 	> Some example labels you'd expect to see:
 	>
 	> 	 
-	    cloud.google.com/gke-boot-disk=pd-standard
-	    cloud.google.com/gke-container-runtime=containerd
-	    cloud.google.com/gke-netd-ready=true
-	    cloud.google.com/gke-nodepool=spot-pool
-	    cloud.google.com/gke-os-distribution=cos
-	    cloud.google.com/gke-preemptible=true
-	    cloud.google.com/machine-family=n2d
+	>    cloud.google.com/gke-boot-disk=pd-standard
+	>    cloud.google.com/gke-container-runtime=containerd
+	>    cloud.google.com/gke-netd-ready=true
+	>    cloud.google.com/gke-nodepool=spot-pool
+	>    cloud.google.com/gke-os-distribution=cos
+	>    cloud.google.com/gke-preemptible=true
+	>    cloud.google.com/machine-family=n2d
 	
 Repeat the steps in **18.** above and notice how pods are only scheduled on the spot node pool.
 
