@@ -228,7 +228,7 @@ The biggest risk with preemptible instances (soon to be Spot instances) would be
 	Example output:
 	
 	```sh
-		NAME     REFERENCE           TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+	NAME     REFERENCE           TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
 	pubsub   Deployment/pubsub   0/200m (avg)   1         5         1          9d
 	```
 	
@@ -238,7 +238,7 @@ The biggest risk with preemptible instances (soon to be Spot instances) would be
 	Example output:
 	
 	```sh
-		NAME                     READY   STATUS    RESTARTS   AGE   IP          NODE                                      NOMINATED NODE   READINESS GATES
+	NAME                     READY   STATUS    RESTARTS   AGE   IP          NODE                                      NOMINATED NODE   READINESS GATES
 	pubsub-d99cfddff-k26kq   1/1     Running   0          29m   10.0.8.24   gke-pubsub-test-spot-pool-3f1f7801-ldhs   <none>           <none>
 	```
 	
